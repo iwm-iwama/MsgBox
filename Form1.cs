@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 //using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WFA1
+namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{

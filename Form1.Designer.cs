@@ -1,4 +1,4 @@
-﻿namespace WFA1
+﻿namespace iwm_MsgBox
 {
 	partial class Form1
 	{
