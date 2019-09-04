@@ -15,7 +15,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private static readonly string VER = "MessageBox iwm20190809";
+		private static readonly string VER = "MessageBox iwm20190904";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
 		private static readonly string PROGRAM = Path.GetFileName(ARGS[0]);
@@ -26,7 +26,7 @@ namespace iwm_MsgBox
 			"【使い方】" + CRLF +
 			$"  {PROGRAM} [オプション1] [オプション2] ..." + CRLF +
 			CRLF +
-			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=9 -button=1,1" + CRLF +
+			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=10 -button=1,1" + CRLF +
 			CRLF +
 			"【オプション】" + CRLF +
 			"  -size=width,height" + CRLF +
@@ -41,7 +41,7 @@ namespace iwm_MsgBox
 			"    (例) \"あいうえお^\\nかき^\\tくけこ\"" + CRLF +
 			CRLF +
 			"  -textsize=n" + CRLF +
-			"    (例) 9" + CRLF +
+			"    (例) 10" + CRLF +
 			CRLF +
 			"  -button=n,n" + CRLF +
 			"    (例)" + CRLF +
@@ -57,7 +57,7 @@ namespace iwm_MsgBox
 		;
 
 		private static readonly int[] SIZE = { 400, 480 };
-		private static readonly int[] TEXTSIZE = { 10, 10 * 16 };
+		private static readonly int[] TEXTSIZE = { 10, 10 * 3 };
 
 		public Form1()
 		{
@@ -207,19 +207,9 @@ namespace iwm_MsgBox
 			TbText.ScrollToCaret();
 		}
 
-		private void CmsResult_AllSelect_Click(object sender, EventArgs e)
-		{
-			TbText.SelectAll();
-		}
-
-		private void CmsResult_Copy_Click(object sender, EventArgs e)
-		{
-			TbText.Copy();
-		}
-
 		private void CmsResult_FontSizeUp_Click(object sender, EventArgs e)
 		{
-			int i1 = (int)TbText.Font.Size * 2;
+			int i1 = (int)TbText.Font.Size + 5;
 
 			if (i1 > TEXTSIZE[1])
 			{
@@ -231,7 +221,7 @@ namespace iwm_MsgBox
 
 		private void CmsResult_FontSizeDn_Click(object sender, EventArgs e)
 		{
-			int i1 = (int)TbText.Font.Size / 2;
+			int i1 = (int)TbText.Font.Size - 5;
 
 			if (i1 < TEXTSIZE[0])
 			{
@@ -239,6 +229,16 @@ namespace iwm_MsgBox
 			}
 
 			TbText.Font = new Font(TbText.Font.FontFamily, i1);
+		}
+
+		private void CmsResult_AllSelect_Click(object sender, EventArgs e)
+		{
+			TbText.SelectAll();
+		}
+
+		private void CmsResult_Copy_Click(object sender, EventArgs e)
+		{
+			TbText.Copy();
 		}
 	}
 

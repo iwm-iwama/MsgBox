@@ -53,7 +53,7 @@
 			this.TbText.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.TbText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.TbText.ContextMenuStrip = this.CmsResult;
-			this.TbText.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.TbText.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.TbText.ForeColor = System.Drawing.SystemColors.InfoText;
 			this.TbText.Location = new System.Drawing.Point(5, 5);
 			this.TbText.Margin = new System.Windows.Forms.Padding(0);
@@ -74,19 +74,19 @@
             this.CmsResult_PgUp,
             this.CmsResult_PgDn,
             this.CmsResult_L1,
-            this.CmsResult_AllSelect,
-            this.CmsResult_Copy,
-            this.CmsResult_L2,
             this.CmsResult_FontSizeUp,
-            this.CmsResult_FontSizeDn});
+            this.CmsResult_FontSizeDn,
+            this.CmsResult_L2,
+            this.CmsResult_AllSelect,
+            this.CmsResult_Copy});
 			this.CmsResult.Name = "CmsTbSaveFileName";
-			this.CmsResult.Size = new System.Drawing.Size(164, 148);
+			this.CmsResult.Size = new System.Drawing.Size(197, 170);
 			// 
 			// CmsResult_PgUp
 			// 
 			this.CmsResult_PgUp.ForeColor = System.Drawing.Color.OrangeRed;
 			this.CmsResult_PgUp.Name = "CmsResult_PgUp";
-			this.CmsResult_PgUp.Size = new System.Drawing.Size(163, 22);
+			this.CmsResult_PgUp.Size = new System.Drawing.Size(196, 22);
 			this.CmsResult_PgUp.Text = "▲";
 			this.CmsResult_PgUp.Click += new System.EventHandler(this.CmsResult_PgUp_Click);
 			// 
@@ -94,20 +94,20 @@
 			// 
 			this.CmsResult_PgDn.ForeColor = System.Drawing.Color.OrangeRed;
 			this.CmsResult_PgDn.Name = "CmsResult_PgDn";
-			this.CmsResult_PgDn.Size = new System.Drawing.Size(163, 22);
+			this.CmsResult_PgDn.Size = new System.Drawing.Size(196, 22);
 			this.CmsResult_PgDn.Text = "▼";
 			this.CmsResult_PgDn.Click += new System.EventHandler(this.CmsResult_PgDn_Click);
 			// 
 			// CmsResult_L1
 			// 
 			this.CmsResult_L1.Name = "CmsResult_L1";
-			this.CmsResult_L1.Size = new System.Drawing.Size(160, 6);
+			this.CmsResult_L1.Size = new System.Drawing.Size(193, 6);
 			// 
 			// CmsResult_AllSelect
 			// 
 			this.CmsResult_AllSelect.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.CmsResult_AllSelect.Name = "CmsResult_AllSelect";
-			this.CmsResult_AllSelect.Size = new System.Drawing.Size(163, 22);
+			this.CmsResult_AllSelect.Size = new System.Drawing.Size(196, 22);
 			this.CmsResult_AllSelect.Text = "全選択";
 			this.CmsResult_AllSelect.Click += new System.EventHandler(this.CmsResult_AllSelect_Click);
 			// 
@@ -115,26 +115,26 @@
 			// 
 			this.CmsResult_Copy.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.CmsResult_Copy.Name = "CmsResult_Copy";
-			this.CmsResult_Copy.Size = new System.Drawing.Size(163, 22);
+			this.CmsResult_Copy.Size = new System.Drawing.Size(196, 22);
 			this.CmsResult_Copy.Text = "コピー";
 			this.CmsResult_Copy.Click += new System.EventHandler(this.CmsResult_Copy_Click);
 			// 
 			// CmsResult_L2
 			// 
 			this.CmsResult_L2.Name = "CmsResult_L2";
-			this.CmsResult_L2.Size = new System.Drawing.Size(160, 6);
+			this.CmsResult_L2.Size = new System.Drawing.Size(193, 6);
 			// 
 			// CmsResult_FontSizeUp
 			// 
 			this.CmsResult_FontSizeUp.Name = "CmsResult_FontSizeUp";
-			this.CmsResult_FontSizeUp.Size = new System.Drawing.Size(163, 22);
+			this.CmsResult_FontSizeUp.Size = new System.Drawing.Size(196, 22);
 			this.CmsResult_FontSizeUp.Text = "フォントを大きくする";
 			this.CmsResult_FontSizeUp.Click += new System.EventHandler(this.CmsResult_FontSizeUp_Click);
 			// 
 			// CmsResult_FontSizeDn
 			// 
 			this.CmsResult_FontSizeDn.Name = "CmsResult_FontSizeDn";
-			this.CmsResult_FontSizeDn.Size = new System.Drawing.Size(163, 22);
+			this.CmsResult_FontSizeDn.Size = new System.Drawing.Size(196, 22);
 			this.CmsResult_FontSizeDn.Text = "フォントを小さくする";
 			this.CmsResult_FontSizeDn.Click += new System.EventHandler(this.CmsResult_FontSizeDn_Click);
 			// 
