@@ -34,11 +34,11 @@
 			this.CmsResult_PgUp = new System.Windows.Forms.ToolStripMenuItem();
 			this.CmsResult_PgDn = new System.Windows.Forms.ToolStripMenuItem();
 			this.CmsResult_L1 = new System.Windows.Forms.ToolStripSeparator();
-			this.CmsResult_AllSelect = new System.Windows.Forms.ToolStripMenuItem();
-			this.CmsResult_Copy = new System.Windows.Forms.ToolStripMenuItem();
-			this.CmsResult_L2 = new System.Windows.Forms.ToolStripSeparator();
 			this.CmsResult_FontSizeUp = new System.Windows.Forms.ToolStripMenuItem();
 			this.CmsResult_FontSizeDn = new System.Windows.Forms.ToolStripMenuItem();
+			this.CmsResult_L2 = new System.Windows.Forms.ToolStripSeparator();
+			this.CmsResult_AllSelect = new System.Windows.Forms.ToolStripMenuItem();
+			this.CmsResult_Copy = new System.Windows.Forms.ToolStripMenuItem();
 			this.BtnYes = new System.Windows.Forms.Button();
 			this.BtnNo = new System.Windows.Forms.Button();
 			this.BtnCancel = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
 			this.TbText.Name = "TbText";
 			this.TbText.ReadOnly = true;
 			this.TbText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.TbText.Size = new System.Drawing.Size(215, 40);
+			this.TbText.Size = new System.Drawing.Size(375, 400);
 			this.TbText.TabIndex = 3;
 			this.TbText.TabStop = false;
 			this.TbText.WordWrap = false;
@@ -80,7 +80,7 @@
             this.CmsResult_AllSelect,
             this.CmsResult_Copy});
 			this.CmsResult.Name = "CmsTbSaveFileName";
-			this.CmsResult.Size = new System.Drawing.Size(197, 170);
+			this.CmsResult.Size = new System.Drawing.Size(197, 148);
 			// 
 			// CmsResult_PgUp
 			// 
@@ -103,6 +103,25 @@
 			this.CmsResult_L1.Name = "CmsResult_L1";
 			this.CmsResult_L1.Size = new System.Drawing.Size(193, 6);
 			// 
+			// CmsResult_FontSizeUp
+			// 
+			this.CmsResult_FontSizeUp.Name = "CmsResult_FontSizeUp";
+			this.CmsResult_FontSizeUp.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_FontSizeUp.Text = "フォントを大きくする";
+			this.CmsResult_FontSizeUp.Click += new System.EventHandler(this.CmsResult_FontSizeUp_Click);
+			// 
+			// CmsResult_FontSizeDn
+			// 
+			this.CmsResult_FontSizeDn.Name = "CmsResult_FontSizeDn";
+			this.CmsResult_FontSizeDn.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_FontSizeDn.Text = "フォントを小さくする";
+			this.CmsResult_FontSizeDn.Click += new System.EventHandler(this.CmsResult_FontSizeDn_Click);
+			// 
+			// CmsResult_L2
+			// 
+			this.CmsResult_L2.Name = "CmsResult_L2";
+			this.CmsResult_L2.Size = new System.Drawing.Size(193, 6);
+			// 
 			// CmsResult_AllSelect
 			// 
 			this.CmsResult_AllSelect.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -119,25 +138,6 @@
 			this.CmsResult_Copy.Text = "コピー";
 			this.CmsResult_Copy.Click += new System.EventHandler(this.CmsResult_Copy_Click);
 			// 
-			// CmsResult_L2
-			// 
-			this.CmsResult_L2.Name = "CmsResult_L2";
-			this.CmsResult_L2.Size = new System.Drawing.Size(193, 6);
-			// 
-			// CmsResult_FontSizeUp
-			// 
-			this.CmsResult_FontSizeUp.Name = "CmsResult_FontSizeUp";
-			this.CmsResult_FontSizeUp.Size = new System.Drawing.Size(196, 22);
-			this.CmsResult_FontSizeUp.Text = "フォントを大きくする";
-			this.CmsResult_FontSizeUp.Click += new System.EventHandler(this.CmsResult_FontSizeUp_Click);
-			// 
-			// CmsResult_FontSizeDn
-			// 
-			this.CmsResult_FontSizeDn.Name = "CmsResult_FontSizeDn";
-			this.CmsResult_FontSizeDn.Size = new System.Drawing.Size(196, 22);
-			this.CmsResult_FontSizeDn.Text = "フォントを小さくする";
-			this.CmsResult_FontSizeDn.Click += new System.EventHandler(this.CmsResult_FontSizeDn_Click);
-			// 
 			// BtnYes
 			// 
 			this.BtnYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,7 +149,7 @@
 			this.BtnYes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
 			this.BtnYes.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.BtnYes.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.BtnYes.Location = new System.Drawing.Point(10, 50);
+			this.BtnYes.Location = new System.Drawing.Point(170, 410);
 			this.BtnYes.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnYes.Name = "BtnYes";
 			this.BtnYes.Size = new System.Drawing.Size(63, 24);
@@ -169,7 +169,7 @@
 			this.BtnNo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
 			this.BtnNo.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.BtnNo.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.BtnNo.Location = new System.Drawing.Point(80, 50);
+			this.BtnNo.Location = new System.Drawing.Point(240, 410);
 			this.BtnNo.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnNo.Name = "BtnNo";
 			this.BtnNo.Size = new System.Drawing.Size(63, 24);
@@ -189,7 +189,7 @@
 			this.BtnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
 			this.BtnCancel.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.BtnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.BtnCancel.Location = new System.Drawing.Point(150, 50);
+			this.BtnCancel.Location = new System.Drawing.Point(310, 410);
 			this.BtnCancel.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnCancel.Name = "BtnCancel";
 			this.BtnCancel.Size = new System.Drawing.Size(63, 24);
@@ -203,7 +203,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(224, 81);
+			this.ClientSize = new System.Drawing.Size(384, 441);
 			this.Controls.Add(this.BtnYes);
 			this.Controls.Add(this.BtnNo);
 			this.Controls.Add(this.BtnCancel);

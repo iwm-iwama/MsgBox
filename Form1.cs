@@ -26,7 +26,7 @@ namespace iwm_MsgBox
 			"【使い方】" + CRLF +
 			$"  {PROGRAM} [オプション1] [オプション2] ..." + CRLF +
 			CRLF +
-			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=10 -button=1,1" + CRLF +
+			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=10 -button=1,1 -button2=\"はい\",\"いいえ\",\"閉じる\"" + CRLF +
 			CRLF +
 			"【オプション】" + CRLF +
 			"  -size=width,height" + CRLF +
@@ -50,13 +50,15 @@ namespace iwm_MsgBox
 			"      0,1 => [いいえ／閉じる]" + CRLF +
 			"      0,0 => [閉じる]" + CRLF +
 			CRLF +
+			"  -button2=\"はい\",\"いいえ\",\"閉じる\"" + CRLF +
+			"    (例) \"Yes\",\"No\",\"Cancel\"" + CRLF +
+			CRLF +
 			"【戻り値】" + CRLF +
 			"  [はい]   => 1" + CRLF +
 			"  [いいえ] => 2" + CRLF +
 			"  [閉じる] => 0" + CRLF
 		;
 
-		private static readonly int[] SIZE = { 400, 480 };
 		private static readonly int[] TEXTSIZE = { 10, 10 * 3 };
 
 		public Form1()
@@ -64,8 +66,6 @@ namespace iwm_MsgBox
 			InitializeComponent();
 
 			// 初期化
-			Width = SIZE[0];
-			Height = SIZE[1];
 			Text = "";
 			TbText.Text = "";
 			BtnYes.Visible = false;
@@ -145,6 +145,14 @@ namespace iwm_MsgBox
 					_as1 = _s1.Substring(8).Split(',');
 					BtnYes.Visible = int.Parse(_as1[0]) > 0 ? true : false;
 					BtnNo.Visible = int.Parse(_as1[1]) > 0 ? true : false;
+				}
+				else if (Regex.IsMatch(_s1, @"^\-button2\=.+\,.+\,.+"))
+				{
+					_as1 = _s1.Substring(9).Split(',');
+
+					BtnYes.Text = _as1[0];
+					BtnNo.Text = _as1[1];
+					BtnCancel.Text = _as1[2];
 				}
 			}
 
