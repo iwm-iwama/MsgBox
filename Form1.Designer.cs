@@ -62,7 +62,7 @@
 			this.TbText.Name = "TbText";
 			this.TbText.ReadOnly = true;
 			this.TbText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.TbText.Size = new System.Drawing.Size(375, 400);
+			this.TbText.Size = new System.Drawing.Size(375, 390);
 			this.TbText.TabIndex = 3;
 			this.TbText.TabStop = false;
 			this.TbText.WordWrap = false;
@@ -80,13 +80,13 @@
             this.CmsResult_AllSelect,
             this.CmsResult_Copy});
 			this.CmsResult.Name = "CmsTbSaveFileName";
-			this.CmsResult.Size = new System.Drawing.Size(197, 148);
+			this.CmsResult.Size = new System.Drawing.Size(164, 148);
 			// 
 			// CmsResult_PgUp
 			// 
 			this.CmsResult_PgUp.ForeColor = System.Drawing.Color.OrangeRed;
 			this.CmsResult_PgUp.Name = "CmsResult_PgUp";
-			this.CmsResult_PgUp.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_PgUp.Size = new System.Drawing.Size(163, 22);
 			this.CmsResult_PgUp.Text = "▲";
 			this.CmsResult_PgUp.Click += new System.EventHandler(this.CmsResult_PgUp_Click);
 			// 
@@ -94,39 +94,39 @@
 			// 
 			this.CmsResult_PgDn.ForeColor = System.Drawing.Color.OrangeRed;
 			this.CmsResult_PgDn.Name = "CmsResult_PgDn";
-			this.CmsResult_PgDn.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_PgDn.Size = new System.Drawing.Size(163, 22);
 			this.CmsResult_PgDn.Text = "▼";
 			this.CmsResult_PgDn.Click += new System.EventHandler(this.CmsResult_PgDn_Click);
 			// 
 			// CmsResult_L1
 			// 
 			this.CmsResult_L1.Name = "CmsResult_L1";
-			this.CmsResult_L1.Size = new System.Drawing.Size(193, 6);
+			this.CmsResult_L1.Size = new System.Drawing.Size(160, 6);
 			// 
 			// CmsResult_FontSizeUp
 			// 
 			this.CmsResult_FontSizeUp.Name = "CmsResult_FontSizeUp";
-			this.CmsResult_FontSizeUp.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_FontSizeUp.Size = new System.Drawing.Size(163, 22);
 			this.CmsResult_FontSizeUp.Text = "フォントを大きくする";
 			this.CmsResult_FontSizeUp.Click += new System.EventHandler(this.CmsResult_FontSizeUp_Click);
 			// 
 			// CmsResult_FontSizeDn
 			// 
 			this.CmsResult_FontSizeDn.Name = "CmsResult_FontSizeDn";
-			this.CmsResult_FontSizeDn.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_FontSizeDn.Size = new System.Drawing.Size(163, 22);
 			this.CmsResult_FontSizeDn.Text = "フォントを小さくする";
 			this.CmsResult_FontSizeDn.Click += new System.EventHandler(this.CmsResult_FontSizeDn_Click);
 			// 
 			// CmsResult_L2
 			// 
 			this.CmsResult_L2.Name = "CmsResult_L2";
-			this.CmsResult_L2.Size = new System.Drawing.Size(193, 6);
+			this.CmsResult_L2.Size = new System.Drawing.Size(160, 6);
 			// 
 			// CmsResult_AllSelect
 			// 
 			this.CmsResult_AllSelect.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.CmsResult_AllSelect.Name = "CmsResult_AllSelect";
-			this.CmsResult_AllSelect.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_AllSelect.Size = new System.Drawing.Size(163, 22);
 			this.CmsResult_AllSelect.Text = "全選択";
 			this.CmsResult_AllSelect.Click += new System.EventHandler(this.CmsResult_AllSelect_Click);
 			// 
@@ -134,7 +134,7 @@
 			// 
 			this.CmsResult_Copy.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.CmsResult_Copy.Name = "CmsResult_Copy";
-			this.CmsResult_Copy.Size = new System.Drawing.Size(196, 22);
+			this.CmsResult_Copy.Size = new System.Drawing.Size(163, 22);
 			this.CmsResult_Copy.Text = "コピー";
 			this.CmsResult_Copy.Click += new System.EventHandler(this.CmsResult_Copy_Click);
 			// 
@@ -149,10 +149,10 @@
 			this.BtnYes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
 			this.BtnYes.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.BtnYes.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.BtnYes.Location = new System.Drawing.Point(170, 410);
+			this.BtnYes.Location = new System.Drawing.Point(165, 405);
 			this.BtnYes.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnYes.Name = "BtnYes";
-			this.BtnYes.Size = new System.Drawing.Size(63, 24);
+			this.BtnYes.Size = new System.Drawing.Size(70, 24);
 			this.BtnYes.TabIndex = 0;
 			this.BtnYes.Text = "はい";
 			this.BtnYes.UseVisualStyleBackColor = false;
@@ -169,10 +169,10 @@
 			this.BtnNo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
 			this.BtnNo.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.BtnNo.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.BtnNo.Location = new System.Drawing.Point(240, 410);
+			this.BtnNo.Location = new System.Drawing.Point(235, 405);
 			this.BtnNo.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnNo.Name = "BtnNo";
-			this.BtnNo.Size = new System.Drawing.Size(63, 24);
+			this.BtnNo.Size = new System.Drawing.Size(70, 24);
 			this.BtnNo.TabIndex = 1;
 			this.BtnNo.Text = "いいえ";
 			this.BtnNo.UseVisualStyleBackColor = false;
@@ -189,10 +189,10 @@
 			this.BtnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
 			this.BtnCancel.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.BtnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.BtnCancel.Location = new System.Drawing.Point(310, 410);
+			this.BtnCancel.Location = new System.Drawing.Point(305, 405);
 			this.BtnCancel.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnCancel.Name = "BtnCancel";
-			this.BtnCancel.Size = new System.Drawing.Size(63, 24);
+			this.BtnCancel.Size = new System.Drawing.Size(70, 24);
 			this.BtnCancel.TabIndex = 2;
 			this.BtnCancel.Text = "閉じる";
 			this.BtnCancel.UseVisualStyleBackColor = false;
@@ -210,7 +210,7 @@
 			this.Controls.Add(this.TbText);
 			this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.MinimizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(240, 120);
+			this.MinimumSize = new System.Drawing.Size(240, 160);
 			this.Name = "Form1";
 			this.ShowIcon = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

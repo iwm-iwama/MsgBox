@@ -15,48 +15,47 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private static readonly string VER = "MessageBox iwm20190904";
+		private const string VER = "MessageBox iwm20200208";
+		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
 		private static readonly string PROGRAM = Path.GetFileName(ARGS[0]);
 
-		private static readonly string CRLF = "\r\n";
-
 		private static readonly string HELP =
-			"【使い方】" + CRLF +
-			$"  {PROGRAM} [オプション1] [オプション2] ..." + CRLF +
-			CRLF +
-			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=10 -button=1,1 -button2=\"はい\",\"いいえ\",\"閉じる\"" + CRLF +
-			CRLF +
-			"【オプション】" + CRLF +
-			"  -size=width,height" + CRLF +
-			"    (例) 240,160" + CRLF +
-			CRLF +
-			"  -title=\"\"" + CRLF +
-			"    (例) \"タイトル\"" + CRLF +
-			CRLF +
-			"  -text=\"\"" + CRLF +
-			"    改行 => ^\\n" + CRLF +
-			"    タブ => ^\\t" + CRLF +
-			"    (例) \"あいうえお^\\nかき^\\tくけこ\"" + CRLF +
-			CRLF +
-			"  -textsize=n" + CRLF +
-			"    (例) 10" + CRLF +
-			CRLF +
-			"  -button=n,n" + CRLF +
-			"    (例)" + CRLF +
-			"      1,1 => [はい／いいえ／閉じる]" + CRLF +
-			"      1,0 => [はい／閉じる]" + CRLF +
-			"      0,1 => [いいえ／閉じる]" + CRLF +
-			"      0,0 => [閉じる]" + CRLF +
-			CRLF +
-			"  -button2=\"はい\",\"いいえ\",\"閉じる\"" + CRLF +
-			"    (例) \"Yes\",\"No\",\"Cancel\"" + CRLF +
-			CRLF +
-			"【戻り値】" + CRLF +
-			"  [はい]   => 1" + CRLF +
-			"  [いいえ] => 2" + CRLF +
-			"  [閉じる] => 0" + CRLF
+			"【使い方】" + NL +
+			$"  {PROGRAM} [オプション1] [オプション2] ..." + NL +
+			NL +
+			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=10 -button=1,1 -button2=\"はい\",\"いいえ\",\"閉じる\"" + NL +
+			NL +
+			"【オプション】" + NL +
+			"  -size=width,height" + NL +
+			"    (例) 240,160" + NL +
+			NL +
+			"  -title=\"\"" + NL +
+			"    (例) \"タイトル\"" + NL +
+			NL +
+			"  -text=\"\"" + NL +
+			"    改行 => ^\\n" + NL +
+			"    タブ => ^\\t" + NL +
+			"    (例) \"あいうえお^\\nかき^\\tくけこ\"" + NL +
+			NL +
+			"  -textsize=n" + NL +
+			"    (例) 10" + NL +
+			NL +
+			"  -button=n,n" + NL +
+			"    (例)" + NL +
+			"      1,1 => [はい／いいえ／閉じる]" + NL +
+			"      1,0 => [はい／閉じる]" + NL +
+			"      0,1 => [いいえ／閉じる]" + NL +
+			"      0,0 => [閉じる]" + NL +
+			NL +
+			"  -button2=\"はい\",\"いいえ\",\"閉じる\"" + NL +
+			"    (例) \"Yes\",\"No\",\"Cancel\"" + NL +
+			NL +
+			"【戻り値】" + NL +
+			"  [はい]   => 1" + NL +
+			"  [いいえ] => 2" + NL +
+			"  [閉じる] => 0" + NL
 		;
 
 		private static readonly int[] TEXTSIZE = { 10, 10 * 3 };
