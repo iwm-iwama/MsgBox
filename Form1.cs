@@ -15,7 +15,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20200208";
+		private const string VER = "MessageBox iwm20200214";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -256,6 +256,7 @@ namespace iwm_MsgBox
 
 	public class Program
 	{
+		[STAThread]
 		private static int Main()
 		{
 			Application.EnableVisualStyles();
