@@ -15,55 +15,21 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20200214";
+		private const string VER = "MessageBox iwm20200730";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
 		private static readonly string PROGRAM = Path.GetFileName(ARGS[0]);
-
-		private static readonly string HELP =
-			"【使い方】" + NL +
-			$"  {PROGRAM} [オプション1] [オプション2] ..." + NL +
-			NL +
-			$"  (例) {PROGRAM} -size=240,160 -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize=10 -button=1,1 -button2=\"はい\",\"いいえ\",\"閉じる\"" + NL +
-			NL +
-			"【オプション】" + NL +
-			"  -size=width,height" + NL +
-			"    (例) 240,160" + NL +
-			NL +
-			"  -title=\"\"" + NL +
-			"    (例) \"タイトル\"" + NL +
-			NL +
-			"  -text=\"\"" + NL +
-			"    改行 => ^\\n" + NL +
-			"    タブ => ^\\t" + NL +
-			"    (例) \"あいうえお^\\nかき^\\tくけこ\"" + NL +
-			NL +
-			"  -textsize=n" + NL +
-			"    (例) 10" + NL +
-			NL +
-			"  -button=n,n" + NL +
-			"    (例)" + NL +
-			"      1,1 => [はい／いいえ／閉じる]" + NL +
-			"      1,0 => [はい／閉じる]" + NL +
-			"      0,1 => [いいえ／閉じる]" + NL +
-			"      0,0 => [閉じる]" + NL +
-			NL +
-			"  -button2=\"はい\",\"いいえ\",\"閉じる\"" + NL +
-			"    (例) \"Yes\",\"No\",\"Cancel\"" + NL +
-			NL +
-			"【戻り値】" + NL +
-			"  [はい]   => 1" + NL +
-			"  [いいえ] => 2" + NL +
-			"  [閉じる] => 0" + NL
-		;
 
 		private static readonly int[] TEXTSIZE = { 10, 10 * 3 };
 
 		public Form1()
 		{
 			InitializeComponent();
+		}
 
+		private void Form1_Load(object sender, EventArgs e)
+		{
 			// 初期化
 			Text = "";
 			TbText.Text = "";
@@ -142,8 +108,8 @@ namespace iwm_MsgBox
 				else if (Regex.IsMatch(_s1, @"^\-button\=\d+\,\d+"))
 				{
 					_as1 = _s1.Substring(8).Split(',');
-					BtnYes.Visible = int.Parse(_as1[0]) > 0 ? true : false;
-					BtnNo.Visible = int.Parse(_as1[1]) > 0 ? true : false;
+					BtnYes.Visible = int.Parse(_as1[0]) > 0;
+					BtnNo.Visible = int.Parse(_as1[1]) > 0;
 				}
 				else if (Regex.IsMatch(_s1, @"^\-button2\=.+\,.+\,.+"))
 				{
@@ -159,7 +125,42 @@ namespace iwm_MsgBox
 			if (iChkCnt == 0)
 			{
 				Text = VER;
-				TbText.Text = HELP;
+				TbText.Text = 
+					"【使い方】" + NL +
+					$"  {PROGRAM} [オプション1] [オプション2] ..." + NL +
+					NL +
+					$"  (例) {PROGRAM} -size={MinimumSize.Width},{MinimumSize.Height} -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize={TEXTSIZE[0]} -button=1,1 -button2=\"はい\",\"いいえ\",\"閉じる\"" + NL +
+					NL +
+					"【オプション】" + NL +
+					"  -size=width,height" + NL +
+					$"    (例) {MinimumSize.Width},{MinimumSize.Height}" + NL +
+					NL +
+					"  -title=\"\"" + NL +
+					"    (例) \"タイトル\"" + NL +
+					NL +
+					"  -text=\"\"" + NL +
+					"    改行 => ^\\n" + NL +
+					"    タブ => ^\\t" + NL +
+					"    (例) \"あいうえお^\\nかき^\\tくけこ\"" + NL +
+					NL +
+					"  -textsize=n" + NL +
+					$"    (例) {TEXTSIZE[0]}" + NL +
+					NL +
+					"  -button=n,n" + NL +
+					"    (例)" + NL +
+					"      1,1 => [はい] [いいえ] [閉じる]" + NL +
+					"      1,0 => [はい] [閉じる]" + NL +
+					"      0,1 => [いいえ] [閉じる]" + NL +
+					"      0,0 => [閉じる]" + NL +
+					NL +
+					"  -button2=\"\",\"\",\"\"" + NL +
+					"    (例) \"はい\",\"いいえ\",\"閉じる\"" + NL +
+					NL +
+					"【戻り値】" + NL +
+					"  [はい]       => 1" + NL +
+					"  [いいえ]     => 2" + NL +
+					"  [閉じる] => 0" + NL
+				;
 			}
 		}
 
@@ -200,18 +201,21 @@ namespace iwm_MsgBox
 			Close();
 		}
 
-		private void CmsResult_PgUp_Click(object sender, EventArgs e)
+		private void CmsResult_Paint(object sender, PaintEventArgs e)
 		{
-			TbText.Select(0, 0);
-			_ = TbText.Focus();
-			TbText.ScrollToCaret();
+			CmsResult_FontSizeUp.Enabled = (int)TbText.Font.Size < TEXTSIZE[1];
+			CmsResult_FontSizeDn.Enabled = (int)TbText.Font.Size > TEXTSIZE[0];
 		}
 
-		private void CmsResult_PgDn_Click(object sender, EventArgs e)
+		private void CmsResult_AllCopy_Click(object sender, EventArgs e)
 		{
-			TbText.Select(TbText.TextLength, 0);
-			_ = TbText.Focus();
-			TbText.ScrollToCaret();
+			TbText.SelectAll();
+			TbText.Copy();
+		}
+
+		private void CmsResult_Copy_Click(object sender, EventArgs e)
+		{
+			TbText.Copy();
 		}
 
 		private void CmsResult_FontSizeUp_Click(object sender, EventArgs e)
@@ -236,16 +240,6 @@ namespace iwm_MsgBox
 			}
 
 			TbText.Font = new Font(TbText.Font.FontFamily, i1);
-		}
-
-		private void CmsResult_AllSelect_Click(object sender, EventArgs e)
-		{
-			TbText.SelectAll();
-		}
-
-		private void CmsResult_Copy_Click(object sender, EventArgs e)
-		{
-			TbText.Copy();
 		}
 	}
 
