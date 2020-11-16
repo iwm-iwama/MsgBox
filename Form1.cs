@@ -1,14 +1,8 @@
 ﻿using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-//using System.Linq;
-//using System.Text;
 using System.Text.RegularExpressions;
-//using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
@@ -16,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20201114";
+		private const string VER = "MessageBox iwm20201116";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -91,8 +85,8 @@ namespace iwm_MsgBox
 					string _s2 = _s1.Substring(6);
 
 					// 特殊文字変換
-					_s2 = Regex.Replace(_s2, @"\^\\n|\r*\n", "\r\n");
-					_s2 = Regex.Replace(_s2, @"\^\\t", "\t");
+					_s2 = Regex.Replace(_s2, @"\\\\n|\r*\n", NL);
+					_s2 = Regex.Replace(_s2, @"\\\\t", "\t");
 
 					TbText.Text = _s2;
 				}
@@ -141,14 +135,18 @@ namespace iwm_MsgBox
 			Height = iH;
 
 			// help
-			if (TbText.Text.Trim().Length == 0)
+			if (TbText.TextLength == 0)
 			{
-				Text = VER;
+				if (Text.Length == 0)
+				{
+					Text = VER;
+				}
+
 				TbText.Text = 
 					"【使い方】" + NL +
 					$"  {PROGRAM} [オプション1] [オプション2] ..." + NL +
 					NL +
-					$"  (例) {PROGRAM} -size={MinimumSize.Width},{MinimumSize.Height} -title=\"タイトル\" -text=\"あいうえお^\\nかき^\\tくけこ\" -textsize={TEXTSIZE[0]} -checkbox=\"上記内容を承諾します。\" -button=1,1 -buttontext=\"はい\",\"いいえ\",\"閉じる\"" + NL +
+					$"  (例) {PROGRAM} -size={MinimumSize.Width},{MinimumSize.Height} -title=\"タイトル\" -text=\"あいうえお\\\\nかき\\\\tくけこ\" -textsize={TEXTSIZE[0]} -checkbox=\"上記内容を承諾します。\" -button=1,1 -buttontext=\"はい\",\"いいえ\",\"閉じる\"" + NL +
 					NL +
 					"【オプション】" + NL +
 					"  -size=width,height" + NL +
@@ -158,9 +156,9 @@ namespace iwm_MsgBox
 					"    (例) \"タイトル\"" + NL +
 					NL +
 					"  -text=\"\"" + NL +
-					"    (例) \"あいうえお^\\nかき^\\tくけこ\"" + NL +
-					"    改行 => ^\\n" + NL +
-					"    タブ => ^\\t" + NL +
+					"    (例) \"あいうえお\\\\nかき\\\\tくけこ\"" + NL +
+					"    改行 => \\\\n" + NL +
+					"    タブ => \\\\t" + NL +
 					NL +
 					"  -textsize=n" + NL +
 					$"    (例) {TEXTSIZE[0]}" + NL +
@@ -321,20 +319,13 @@ namespace iwm_MsgBox
 	public class Program
 	{
 		[STAThread]
-		private static int Main()
+		private static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Form1());
 
-			// Return
-			int rtn = Pub.Rtn;
-
-			// For Script's
-			Console.Write(rtn);
-
-			// DOS %errorlevel%
-			return rtn;
+			Console.Write(Pub.Rtn);
 		}
 	}
 }

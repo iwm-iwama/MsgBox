@@ -55,11 +55,11 @@
 			this.TbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.TbText.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.TbText.BackColor = System.Drawing.Color.White;
 			this.TbText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.TbText.ContextMenuStrip = this.CmsResult;
 			this.TbText.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.TbText.ForeColor = System.Drawing.SystemColors.InfoText;
+			this.TbText.ForeColor = System.Drawing.Color.Black;
 			this.TbText.Location = new System.Drawing.Point(0, 0);
 			this.TbText.Margin = new System.Windows.Forms.Padding(0);
 			this.TbText.MaxLength = 2147483647;
@@ -129,7 +129,7 @@
 			this.BtnYes.Size = new System.Drawing.Size(70, 24);
 			this.BtnYes.TabIndex = 0;
 			this.BtnYes.Text = "はい";
-			this.BtnYes.UseVisualStyleBackColor = false;
+			this.BtnYes.UseVisualStyleBackColor = true;
 			this.BtnYes.Click += new System.EventHandler(this.BtnYes_Click);
 			// 
 			// BtnNo
@@ -149,7 +149,7 @@
 			this.BtnNo.Size = new System.Drawing.Size(70, 24);
 			this.BtnNo.TabIndex = 1;
 			this.BtnNo.Text = "いいえ";
-			this.BtnNo.UseVisualStyleBackColor = false;
+			this.BtnNo.UseVisualStyleBackColor = true;
 			this.BtnNo.Click += new System.EventHandler(this.BtnNo_Click);
 			// 
 			// BtnCancel
@@ -169,13 +169,14 @@
 			this.BtnCancel.Size = new System.Drawing.Size(70, 24);
 			this.BtnCancel.TabIndex = 2;
 			this.BtnCancel.Text = "閉じる";
-			this.BtnCancel.UseVisualStyleBackColor = false;
+			this.BtnCancel.UseVisualStyleBackColor = true;
 			this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
 			// 
 			// CbAccept
 			// 
 			this.CbAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.CbAccept.AutoSize = true;
+			this.CbAccept.BackColor = System.Drawing.SystemColors.Control;
 			this.CbAccept.Checked = true;
 			this.CbAccept.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.CbAccept.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
