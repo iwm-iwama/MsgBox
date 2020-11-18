@@ -10,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20201116";
+		private const string VER = "MessageBox iwm20201118";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -144,7 +144,7 @@ namespace iwm_MsgBox
 
 				TbText.Text = 
 					"【使い方】" + NL +
-					$"  {PROGRAM} [オプション1] [オプション2] ..." + NL +
+					$"  {PROGRAM} [オプション] ..." + NL +
 					NL +
 					$"  (例) {PROGRAM} -size={MinimumSize.Width},{MinimumSize.Height} -title=\"タイトル\" -text=\"あいうえお\\\\nかき\\\\tくけこ\" -textsize={TEXTSIZE[0]} -checkbox=\"上記内容を承諾します。\" -button=1,1 -buttontext=\"はい\",\"いいえ\",\"閉じる\"" + NL +
 					NL +
