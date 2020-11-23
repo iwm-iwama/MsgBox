@@ -10,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20201118";
+		private const string VER = "MessageBox iwm20201123";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -131,8 +131,13 @@ namespace iwm_MsgBox
 			// 再描画
 			BtnYes.Enabled = CbAccept.Checked;
 			BtnYes.Location = BtnYes.Visible && !BtnNo.Visible ? new Point(BtnYes_POSX[1], BtnYes.Location.Y) : new Point(BtnYes_POSX[0], BtnYes.Location.Y);
+
 			Width = iW;
 			Height = iH;
+
+			StartPosition = FormStartPosition.CenterScreen;
+			Left = (Screen.PrimaryScreen.Bounds.Width - Width) / 2;
+			Top = (Screen.PrimaryScreen.Bounds.Height - Height) / 2;
 
 			// help
 			if (TbText.TextLength == 0)
@@ -218,7 +223,7 @@ namespace iwm_MsgBox
 			else
 			{
 				BtnYes.Enabled = false;
-				_ = BtnNo.Focus();
+				_ = BtnNo.Visible ? BtnNo.Focus() : BtnCancel.Focus();
 			}
 		}
 
