@@ -10,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20201123";
+		private const string VER = "MessageBox iwm20210530";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -135,9 +135,8 @@ namespace iwm_MsgBox
 			Width = iW;
 			Height = iH;
 
-			StartPosition = FormStartPosition.CenterScreen;
-			Left = (Screen.PrimaryScreen.Bounds.Width - Width) / 2;
-			Top = (Screen.PrimaryScreen.Bounds.Height - Height) / 2;
+			StartPosition = FormStartPosition.Manual;
+			Form1_StartPosition();
 
 			// help
 			if (TbText.TextLength == 0)
@@ -187,6 +186,40 @@ namespace iwm_MsgBox
 					"  [閉じる] => 0" + NL
 				;
 			}
+		}
+
+		private void Form1_StartPosition()
+		{
+			int WorkingAreaW = Screen.PrimaryScreen.WorkingArea.Width;
+			int WorkingAreaH = Screen.PrimaryScreen.WorkingArea.Height;
+
+			int WorkingAreaX = Screen.PrimaryScreen.WorkingArea.X;
+			int WorkingAreaY = Screen.PrimaryScreen.WorkingArea.Y;
+
+			int MouseX = Cursor.Position.X;
+			int MouseY = Cursor.Position.Y;
+
+			// X = Width
+			if (WorkingAreaW < MouseX + Size.Width)
+			{
+				MouseX -= Size.Width;
+				if (MouseX < 0)
+				{
+					MouseX = WorkingAreaX + 10;
+				}
+			}
+
+			// Y = Height
+			if (WorkingAreaH < MouseY + Size.Height)
+			{
+				MouseY -= Size.Height;
+				if (MouseY < 0)
+				{
+					MouseY = WorkingAreaY + 10;
+				}
+			}
+
+			Location = new Point(MouseX, MouseY);
 		}
 
 		private Point MousePoint;
