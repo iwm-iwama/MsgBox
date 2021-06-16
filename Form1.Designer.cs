@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.TbText = new System.Windows.Forms.TextBox();
 			this.CmsResult = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.CmsResult_AllCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,7 @@
 			this.TbText.ReadOnly = true;
 			this.TbText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.TbText.Size = new System.Drawing.Size(383, 380);
-			this.TbText.TabIndex = 3;
+			this.TbText.TabIndex = 0;
 			this.TbText.TabStop = false;
 			this.TbText.WordWrap = false;
 			this.TbText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TbText_MouseUp);
@@ -127,7 +128,7 @@
 			this.BtnYes.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnYes.Name = "BtnYes";
 			this.BtnYes.Size = new System.Drawing.Size(70, 24);
-			this.BtnYes.TabIndex = 0;
+			this.BtnYes.TabIndex = 2;
 			this.BtnYes.Text = "はい";
 			this.BtnYes.UseVisualStyleBackColor = true;
 			this.BtnYes.Click += new System.EventHandler(this.BtnYes_Click);
@@ -147,7 +148,7 @@
 			this.BtnNo.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnNo.Name = "BtnNo";
 			this.BtnNo.Size = new System.Drawing.Size(70, 24);
-			this.BtnNo.TabIndex = 1;
+			this.BtnNo.TabIndex = 3;
 			this.BtnNo.Text = "いいえ";
 			this.BtnNo.UseVisualStyleBackColor = true;
 			this.BtnNo.Click += new System.EventHandler(this.BtnNo_Click);
@@ -167,7 +168,7 @@
 			this.BtnCancel.Margin = new System.Windows.Forms.Padding(0);
 			this.BtnCancel.Name = "BtnCancel";
 			this.BtnCancel.Size = new System.Drawing.Size(70, 24);
-			this.BtnCancel.TabIndex = 2;
+			this.BtnCancel.TabIndex = 4;
 			this.BtnCancel.Text = "閉じる";
 			this.BtnCancel.UseVisualStyleBackColor = true;
 			this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -184,8 +185,7 @@
 			this.CbAccept.Margin = new System.Windows.Forms.Padding(0);
 			this.CbAccept.Name = "CbAccept";
 			this.CbAccept.Size = new System.Drawing.Size(157, 17);
-			this.CbAccept.TabIndex = 4;
-			this.CbAccept.TabStop = false;
+			this.CbAccept.TabIndex = 1;
 			this.CbAccept.Text = "上記内容を承諾します。";
 			this.CbAccept.UseVisualStyleBackColor = true;
 			this.CbAccept.CheckedChanged += new System.EventHandler(this.CbAccept_CheckedChanged);
@@ -201,6 +201,7 @@
 			// 
 			// CmsTextSelect_コピー
 			// 
+			this.CmsTextSelect_コピー.Image = ((System.Drawing.Image)(resources.GetObject("CmsTextSelect_コピー.Image")));
 			this.CmsTextSelect_コピー.Name = "CmsTextSelect_コピー";
 			this.CmsTextSelect_コピー.Size = new System.Drawing.Size(124, 22);
 			this.CmsTextSelect_コピー.Text = "コピー";
@@ -217,28 +218,32 @@
             this.CmsTextSelect_ネット検索_Google,
             this.CmsTextSelect_ネット検索_YouTube,
             this.CmsTextSelect_ネット検索_Wikipedia});
+			this.CmsTextSelect_ネット検索.Image = ((System.Drawing.Image)(resources.GetObject("CmsTextSelect_ネット検索.Image")));
 			this.CmsTextSelect_ネット検索.Name = "CmsTextSelect_ネット検索";
 			this.CmsTextSelect_ネット検索.Size = new System.Drawing.Size(124, 22);
 			this.CmsTextSelect_ネット検索.Text = "ネット検索";
 			// 
 			// CmsTextSelect_ネット検索_Google
 			// 
+			this.CmsTextSelect_ネット検索_Google.Image = ((System.Drawing.Image)(resources.GetObject("CmsTextSelect_ネット検索_Google.Image")));
 			this.CmsTextSelect_ネット検索_Google.Name = "CmsTextSelect_ネット検索_Google";
-			this.CmsTextSelect_ネット検索_Google.Size = new System.Drawing.Size(126, 22);
+			this.CmsTextSelect_ネット検索_Google.Size = new System.Drawing.Size(180, 22);
 			this.CmsTextSelect_ネット検索_Google.Text = "Google";
 			this.CmsTextSelect_ネット検索_Google.Click += new System.EventHandler(this.CmsTextSelect_ネット検索_Google_Click);
 			// 
 			// CmsTextSelect_ネット検索_YouTube
 			// 
+			this.CmsTextSelect_ネット検索_YouTube.Image = ((System.Drawing.Image)(resources.GetObject("CmsTextSelect_ネット検索_YouTube.Image")));
 			this.CmsTextSelect_ネット検索_YouTube.Name = "CmsTextSelect_ネット検索_YouTube";
-			this.CmsTextSelect_ネット検索_YouTube.Size = new System.Drawing.Size(126, 22);
+			this.CmsTextSelect_ネット検索_YouTube.Size = new System.Drawing.Size(180, 22);
 			this.CmsTextSelect_ネット検索_YouTube.Text = "YouTube";
 			this.CmsTextSelect_ネット検索_YouTube.Click += new System.EventHandler(this.CmsTextSelect_ネット検索_YouTube_Click);
 			// 
 			// CmsTextSelect_ネット検索_Wikipedia
 			// 
+			this.CmsTextSelect_ネット検索_Wikipedia.Image = ((System.Drawing.Image)(resources.GetObject("CmsTextSelect_ネット検索_Wikipedia.Image")));
 			this.CmsTextSelect_ネット検索_Wikipedia.Name = "CmsTextSelect_ネット検索_Wikipedia";
-			this.CmsTextSelect_ネット検索_Wikipedia.Size = new System.Drawing.Size(126, 22);
+			this.CmsTextSelect_ネット検索_Wikipedia.Size = new System.Drawing.Size(180, 22);
 			this.CmsTextSelect_ネット検索_Wikipedia.Text = "Wikipedia";
 			this.CmsTextSelect_ネット検索_Wikipedia.Click += new System.EventHandler(this.CmsTextSelect_ネット検索_Wikipedia_Click);
 			// 

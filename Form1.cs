@@ -10,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20210530";
+		private const string VER = "MessageBox iwm20210616";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -35,11 +35,15 @@ namespace iwm_MsgBox
 			TbText.Text = "";
 			TbText_HEIGHT[0] = TbText.Height;
 			TbText_HEIGHT[1] = TbText_HEIGHT[0] + 20;
+
 			BtnYes_POSX[0] = BtnYes.Location.X;
 			BtnYes_POSX[1] = BtnNo.Location.X;
 			BtnYes.Visible = false;
 			BtnNo.Visible = false;
+
 			CbAccept.Checked = true;
+			CbAccept.Visible = false;
+
 			TbText.Height = TbText_HEIGHT[1];
 
 			int iW = Width;
@@ -111,6 +115,7 @@ namespace iwm_MsgBox
 				{
 					CbAccept.Text = _s1.Substring(10);
 					CbAccept.Checked = false;
+					CbAccept.Visible = true;
 					TbText.Height = TbText_HEIGHT[0];
 				}
 				else if (Regex.IsMatch(_s1, @"^\-button\=\d+\,\d+"))
@@ -136,7 +141,7 @@ namespace iwm_MsgBox
 			Height = iH;
 
 			StartPosition = FormStartPosition.Manual;
-			Form1_StartPosition();
+			SubForm1_StartPosition();
 
 			// help
 			if (TbText.TextLength == 0)
@@ -188,7 +193,7 @@ namespace iwm_MsgBox
 			}
 		}
 
-		private void Form1_StartPosition()
+		private void SubForm1_StartPosition()
 		{
 			int WorkingAreaW = Screen.PrimaryScreen.WorkingArea.Width;
 			int WorkingAreaH = Screen.PrimaryScreen.WorkingArea.Height;
