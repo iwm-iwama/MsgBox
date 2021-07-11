@@ -151,7 +151,7 @@ namespace iwm_MsgBox
 					Text = VER;
 				}
 
-				TbText.Text = 
+				TbText.Text =
 					"【使い方】" + NL +
 					$"  {PROGRAM} [オプション] ..." + NL +
 					NL +

@@ -53,9 +53,9 @@
 			// 
 			// TbText
 			// 
-			this.TbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.TbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.TbText.BackColor = System.Drawing.Color.White;
 			this.TbText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.TbText.ContextMenuStrip = this.CmsResult;
@@ -78,10 +78,10 @@
 			// 
 			this.CmsResult.BackColor = System.Drawing.SystemColors.Control;
 			this.CmsResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CmsResult_AllCopy,
-            this.CmsResult_L2,
-            this.CmsResult_FontSizeUp,
-            this.CmsResult_FontSizeDn});
+			this.CmsResult_AllCopy,
+			this.CmsResult_L2,
+			this.CmsResult_FontSizeUp,
+			this.CmsResult_FontSizeDn});
 			this.CmsResult.Name = "CmsTbSaveFileName";
 			this.CmsResult.Size = new System.Drawing.Size(164, 76);
 			this.CmsResult.Paint += new System.Windows.Forms.PaintEventHandler(this.CmsResult_Paint);
@@ -193,9 +193,9 @@
 			// CmsTextSelect
 			// 
 			this.CmsTextSelect.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CmsTextSelect_コピー,
-            this.toolStripSeparator3,
-            this.CmsTextSelect_ネット検索});
+			this.CmsTextSelect_コピー,
+			this.toolStripSeparator3,
+			this.CmsTextSelect_ネット検索});
 			this.CmsTextSelect.Name = "CmsResult";
 			this.CmsTextSelect.Size = new System.Drawing.Size(125, 54);
 			// 
@@ -215,9 +215,9 @@
 			// CmsTextSelect_ネット検索
 			// 
 			this.CmsTextSelect_ネット検索.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CmsTextSelect_ネット検索_Google,
-            this.CmsTextSelect_ネット検索_YouTube,
-            this.CmsTextSelect_ネット検索_Wikipedia});
+			this.CmsTextSelect_ネット検索_Google,
+			this.CmsTextSelect_ネット検索_YouTube,
+			this.CmsTextSelect_ネット検索_Wikipedia});
 			this.CmsTextSelect_ネット検索.Image = ((System.Drawing.Image)(resources.GetObject("CmsTextSelect_ネット検索.Image")));
 			this.CmsTextSelect_ネット検索.Name = "CmsTextSelect_ネット検索";
 			this.CmsTextSelect_ネット検索.Size = new System.Drawing.Size(124, 22);
