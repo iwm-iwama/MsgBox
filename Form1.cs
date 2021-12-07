@@ -141,7 +141,7 @@ namespace iwm_MsgBox
 			Height = iH;
 
 			StartPosition = FormStartPosition.Manual;
-			SubForm1_StartPosition();
+			SubFormStartPosition();
 
 			// help
 			if (TbText.TextLength == 0)
@@ -193,7 +193,7 @@ namespace iwm_MsgBox
 			}
 		}
 
-		private void SubForm1_StartPosition()
+		private void SubFormStartPosition()
 		{
 			int WorkingAreaW = Screen.PrimaryScreen.WorkingArea.Width;
 			int WorkingAreaH = Screen.PrimaryScreen.WorkingArea.Height;
@@ -267,19 +267,19 @@ namespace iwm_MsgBox
 
 		private void BtnYes_Click(object sender, EventArgs e)
 		{
-			Pub.Rtn = 1;
+			Let.Rtn = 1;
 			Close();
 		}
 
 		private void BtnNo_Click(object sender, EventArgs e)
 		{
-			Pub.Rtn = 2;
+			Let.Rtn = 2;
 			Close();
 		}
 
 		private void BtnCancel_Click(object sender, EventArgs e)
 		{
-			Pub.Rtn = 0;
+			Let.Rtn = 0;
 			Close();
 		}
 
@@ -354,7 +354,7 @@ namespace iwm_MsgBox
 		}
 	}
 
-	public class Pub
+	public class Let
 	{
 		public static int Rtn = 0;
 	}
@@ -368,7 +368,7 @@ namespace iwm_MsgBox
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Form1());
 
-			Console.Write(Pub.Rtn);
+			Console.Write(Let.Rtn);
 		}
 	}
 }
