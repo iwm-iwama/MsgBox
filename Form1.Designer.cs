@@ -54,6 +54,7 @@
 			// 
 			this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.BtnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
 			this.BtnCancel.FlatAppearance.BorderSize = 0;
 			this.BtnCancel.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
@@ -74,6 +75,7 @@
 			// 
 			this.BtnNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.BtnNo.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.BtnNo.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.BtnNo.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
 			this.BtnNo.FlatAppearance.BorderSize = 0;
 			this.BtnNo.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
@@ -94,6 +96,7 @@
 			// 
 			this.BtnYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.BtnYes.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.BtnYes.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.BtnYes.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
 			this.BtnYes.FlatAppearance.BorderSize = 0;
 			this.BtnYes.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
@@ -117,6 +120,7 @@
 			this.CbAccept.BackColor = System.Drawing.SystemColors.Control;
 			this.CbAccept.Checked = true;
 			this.CbAccept.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.CbAccept.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.CbAccept.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.CbAccept.Location = new System.Drawing.Point(10, 385);
 			this.CbAccept.Margin = new System.Windows.Forms.Padding(0);
@@ -131,10 +135,10 @@
 			// 
 			this.CmsResult.BackColor = System.Drawing.SystemColors.Control;
 			this.CmsResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CmsResult_AllCopy,
-            this.CmsResult_tss01,
-            this.CmsResult_FontSizeUp,
-            this.CmsResult_FontSizeDn});
+			this.CmsResult_AllCopy,
+			this.CmsResult_tss01,
+			this.CmsResult_FontSizeUp,
+			this.CmsResult_FontSizeDn});
 			this.CmsResult.Name = "CmsTbSaveFileName";
 			this.CmsResult.Size = new System.Drawing.Size(164, 76);
 			this.CmsResult.Paint += new System.Windows.Forms.PaintEventHandler(this.CmsResult_Paint);
@@ -169,60 +173,60 @@
 			// CmsTextSelect
 			// 
 			this.CmsTextSelect.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CmsTextSelect_コピー,
-            this.CmsTextSelect_tss01,
-            this.CmsTextSelect_ネット検索});
+			this.CmsTextSelect_コピー,
+			this.CmsTextSelect_tss01,
+			this.CmsTextSelect_ネット検索});
 			this.CmsTextSelect.Name = "CmsResult";
-			this.CmsTextSelect.Size = new System.Drawing.Size(181, 76);
+			this.CmsTextSelect.Size = new System.Drawing.Size(125, 54);
 			// 
 			// CmsTextSelect_コピー
 			// 
 			this.CmsTextSelect_コピー.Name = "CmsTextSelect_コピー";
-			this.CmsTextSelect_コピー.Size = new System.Drawing.Size(180, 22);
+			this.CmsTextSelect_コピー.Size = new System.Drawing.Size(124, 22);
 			this.CmsTextSelect_コピー.Text = "コピー";
 			this.CmsTextSelect_コピー.Click += new System.EventHandler(this.CmsTextSelect_コピー_Click);
 			// 
 			// CmsTextSelect_tss01
 			// 
 			this.CmsTextSelect_tss01.Name = "CmsTextSelect_tss01";
-			this.CmsTextSelect_tss01.Size = new System.Drawing.Size(177, 6);
+			this.CmsTextSelect_tss01.Size = new System.Drawing.Size(121, 6);
 			// 
 			// CmsTextSelect_ネット検索
 			// 
 			this.CmsTextSelect_ネット検索.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CmsTextSelect_ネット検索_Google,
-            this.CmsTextSelect_ネット検索_YouTube,
-            this.CmsTextSelect_ネット検索_Wikipedia});
+			this.CmsTextSelect_ネット検索_Google,
+			this.CmsTextSelect_ネット検索_YouTube,
+			this.CmsTextSelect_ネット検索_Wikipedia});
 			this.CmsTextSelect_ネット検索.Name = "CmsTextSelect_ネット検索";
-			this.CmsTextSelect_ネット検索.Size = new System.Drawing.Size(180, 22);
+			this.CmsTextSelect_ネット検索.Size = new System.Drawing.Size(124, 22);
 			this.CmsTextSelect_ネット検索.Text = "ネット検索";
 			// 
 			// CmsTextSelect_ネット検索_Google
 			// 
 			this.CmsTextSelect_ネット検索_Google.Name = "CmsTextSelect_ネット検索_Google";
-			this.CmsTextSelect_ネット検索_Google.Size = new System.Drawing.Size(180, 22);
+			this.CmsTextSelect_ネット検索_Google.Size = new System.Drawing.Size(126, 22);
 			this.CmsTextSelect_ネット検索_Google.Text = "Google";
 			this.CmsTextSelect_ネット検索_Google.Click += new System.EventHandler(this.CmsTextSelect_ネット検索_Google_Click);
 			// 
 			// CmsTextSelect_ネット検索_YouTube
 			// 
 			this.CmsTextSelect_ネット検索_YouTube.Name = "CmsTextSelect_ネット検索_YouTube";
-			this.CmsTextSelect_ネット検索_YouTube.Size = new System.Drawing.Size(180, 22);
+			this.CmsTextSelect_ネット検索_YouTube.Size = new System.Drawing.Size(126, 22);
 			this.CmsTextSelect_ネット検索_YouTube.Text = "YouTube";
 			this.CmsTextSelect_ネット検索_YouTube.Click += new System.EventHandler(this.CmsTextSelect_ネット検索_YouTube_Click);
 			// 
 			// CmsTextSelect_ネット検索_Wikipedia
 			// 
 			this.CmsTextSelect_ネット検索_Wikipedia.Name = "CmsTextSelect_ネット検索_Wikipedia";
-			this.CmsTextSelect_ネット検索_Wikipedia.Size = new System.Drawing.Size(180, 22);
+			this.CmsTextSelect_ネット検索_Wikipedia.Size = new System.Drawing.Size(126, 22);
 			this.CmsTextSelect_ネット検索_Wikipedia.Text = "Wikipedia";
 			this.CmsTextSelect_ネット検索_Wikipedia.Click += new System.EventHandler(this.CmsTextSelect_ネット検索_Wikipedia_Click);
 			// 
 			// TbText
 			// 
 			this.TbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.TbText.BackColor = System.Drawing.Color.White;
 			this.TbText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.TbText.ContextMenuStrip = this.CmsResult;
@@ -258,7 +262,7 @@
 			this.MinimumSize = new System.Drawing.Size(250, 160);
 			this.Name = "Form1";
 			this.ShowIcon = false;
-			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
 			this.TopMost = true;
@@ -273,23 +277,24 @@
 		}
 
 		#endregion
+
 		private System.Windows.Forms.Button BtnCancel;
 		private System.Windows.Forms.Button BtnNo;
 		private System.Windows.Forms.Button BtnYes;
 		private System.Windows.Forms.CheckBox CbAccept;
 		private System.Windows.Forms.ContextMenuStrip CmsResult;
-		private System.Windows.Forms.ContextMenuStrip CmsTextSelect;
-		private System.Windows.Forms.TextBox TbText;
 		private System.Windows.Forms.ToolStripMenuItem CmsResult_AllCopy;
-		private System.Windows.Forms.ToolStripMenuItem CmsResult_FontSizeDn;
+		private System.Windows.Forms.ToolStripSeparator CmsResult_tss01;
 		private System.Windows.Forms.ToolStripMenuItem CmsResult_FontSizeUp;
+		private System.Windows.Forms.ToolStripMenuItem CmsResult_FontSizeDn;
+		private System.Windows.Forms.ContextMenuStrip CmsTextSelect;
 		private System.Windows.Forms.ToolStripMenuItem CmsTextSelect_コピー;
+		private System.Windows.Forms.ToolStripSeparator CmsTextSelect_tss01;
 		private System.Windows.Forms.ToolStripMenuItem CmsTextSelect_ネット検索;
 		private System.Windows.Forms.ToolStripMenuItem CmsTextSelect_ネット検索_Google;
-		private System.Windows.Forms.ToolStripMenuItem CmsTextSelect_ネット検索_Wikipedia;
 		private System.Windows.Forms.ToolStripMenuItem CmsTextSelect_ネット検索_YouTube;
-		private System.Windows.Forms.ToolStripSeparator CmsResult_tss01;
-		private System.Windows.Forms.ToolStripSeparator CmsTextSelect_tss01;
+		private System.Windows.Forms.ToolStripMenuItem CmsTextSelect_ネット検索_Wikipedia;
+		private System.Windows.Forms.TextBox TbText;
 	}
 }
 
