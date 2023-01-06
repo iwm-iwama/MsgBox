@@ -10,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20230102";
+		private const string VER = "MessageBox iwm20230106";
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -18,10 +18,8 @@ namespace iwm_MsgBox
 
 		private static readonly int[] TEXTSIZE = { 10, 10 * 3 };
 
-		private readonly int[] TbText_HEIGHT = { 0, 0 };
+		private readonly int[] TbResult_HEIGHT = { 0, 0 };
 		private readonly int[] BtnYes_POSX = { 0, 0 };
-
-		private TextBox TB = null;
 
 		public Form1()
 		{
@@ -33,12 +31,12 @@ namespace iwm_MsgBox
 			// 初期化
 			Visible = false;
 			StartPosition = FormStartPosition.Manual;
-			SubFormStartPosition();
+			Location = new Point(Cursor.Position.X - (Width / 2), Cursor.Position.Y - (SystemInformation.CaptionHeight / 2));
 			Text = "";
 
-			TbText.Text = "";
-			TbText_HEIGHT[0] = TbText.Height;
-			TbText_HEIGHT[1] = TbText_HEIGHT[0] + 20;
+			TbResult.Text = "";
+			TbResult_HEIGHT[0] = TbResult.Height;
+			TbResult_HEIGHT[1] = TbResult_HEIGHT[0] + 20;
 
 			BtnYes_POSX[0] = BtnYes.Location.X;
 			BtnYes_POSX[1] = BtnNo.Location.X;
@@ -48,7 +46,7 @@ namespace iwm_MsgBox
 			CbAccept.Checked = true;
 			CbAccept.Visible = false;
 
-			TbText.Height = TbText_HEIGHT[1];
+			TbResult.Height = TbResult_HEIGHT[1];
 
 			int iW = Width;
 			int iH = Height;
@@ -96,7 +94,7 @@ namespace iwm_MsgBox
 					_s2 = Regex.Replace(_s2, @"\\\\n|\r*\n", NL);
 					_s2 = Regex.Replace(_s2, @"\\\\t", "\t");
 
-					TbText.Text = _s2;
+					TbResult.Text = _s2;
 				}
 				else if (Regex.IsMatch(_s1, @"^\-textsize\=\d+"))
 				{
@@ -113,14 +111,14 @@ namespace iwm_MsgBox
 						_i2 = TEXTSIZE[1];
 					}
 
-					TbText.Font = new Font(TbText.Font.FontFamily, _i2);
+					TbResult.Font = new Font(TbResult.Font.FontFamily, _i2);
 				}
 				else if (Regex.IsMatch(_s1, @"^\-checkbox\=.*"))
 				{
 					CbAccept.Text = _s1.Substring(10);
 					CbAccept.Checked = false;
 					CbAccept.Visible = true;
-					TbText.Height = TbText_HEIGHT[0];
+					TbResult.Height = TbResult_HEIGHT[0];
 				}
 				else if (Regex.IsMatch(_s1, @"^\-button\=\d+\,\d+"))
 				{
@@ -135,6 +133,10 @@ namespace iwm_MsgBox
 					BtnNo.Text = _as1[1];
 					BtnCancel.Text = _as1[2];
 				}
+				else if (_s1 == @"-center")
+				{
+					Location = new Point((Screen.GetWorkingArea(this).Width - Width) / 2, (Screen.GetWorkingArea(this).Height - Height) / 2);
+				}
 			}
 
 			// 再描画
@@ -145,14 +147,14 @@ namespace iwm_MsgBox
 			Height = iH;
 
 			// help
-			if (TbText.TextLength == 0)
+			if (TbResult.TextLength == 0)
 			{
 				if (Text.Length == 0)
 				{
 					Text = VER;
 				}
 
-				TbText.Text =
+				TbResult.Text =
 					"【使い方】" + NL +
 					$"  {PROGRAM} [オプション] ..." + NL +
 					NL +
@@ -186,6 +188,9 @@ namespace iwm_MsgBox
 					"  -buttontext=\"\",\"\",\"\"" + NL +
 					"    (例) \"はい\",\"いいえ\",\"閉じる\"" + NL +
 					NL +
+					"  -center" + NL +
+					"    画面中央に表示" + NL +
+					NL +
 					"【戻り値】" + NL +
 					"  [はい]   => 1" + NL +
 					"  [いいえ] => 2" + NL +
@@ -194,35 +199,6 @@ namespace iwm_MsgBox
 			}
 
 			Visible = true;
-		}
-
-		private void SubFormStartPosition()
-		{
-			Location = new Point(Cursor.Position.X - (Width / 2), Cursor.Position.Y - (SystemInformation.CaptionHeight / 2));
-		}
-
-		private Point MousePoint;
-
-		private void Form1_MouseDown(object sender, MouseEventArgs e)
-		{
-			if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
-			{
-				MousePoint = new Point(e.X, e.Y);
-			}
-		}
-
-		private void Form1_MouseMove(object sender, MouseEventArgs e)
-		{
-			if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
-			{
-				Left += e.X - MousePoint.X;
-				Top += e.Y - MousePoint.Y;
-			}
-		}
-
-		private void TbText_MouseUp(object sender, MouseEventArgs e)
-		{
-			CmsTextSelect_Open(e, TbText);
 		}
 
 		private void CbAccept_CheckedChanged(object sender, EventArgs e)
@@ -259,72 +235,63 @@ namespace iwm_MsgBox
 
 		private void CmsResult_Paint(object sender, PaintEventArgs e)
 		{
-			CmsResult_FontSizeUp.Enabled = (int)TbText.Font.Size < TEXTSIZE[1];
-			CmsResult_FontSizeDn.Enabled = (int)TbText.Font.Size > TEXTSIZE[0];
-		}
-
-		private void CmsResult_AllCopy_Click(object sender, EventArgs e)
-		{
-			TbText.SelectAll();
-			TbText.Copy();
+			CmsResult_FontSizeUp.Enabled = (int)TbResult.Font.Size < TEXTSIZE[1];
+			CmsResult_FontSizeDn.Enabled = (int)TbResult.Font.Size > TEXTSIZE[0];
 		}
 
 		private void CmsResult_FontSizeUp_Click(object sender, EventArgs e)
 		{
-			int i1 = (int)TbText.Font.Size + 5;
+			int i1 = (int)TbResult.Font.Size + 5;
 
 			if (i1 > TEXTSIZE[1])
 			{
 				i1 = TEXTSIZE[1];
 			}
 
-			TbText.Font = new Font(TbText.Font.FontFamily, i1);
+			TbResult.Font = new Font(TbResult.Font.FontFamily, i1);
 		}
 
 		private void CmsResult_FontSizeDn_Click(object sender, EventArgs e)
 		{
-			int i1 = (int)TbText.Font.Size - 5;
+			int i1 = (int)TbResult.Font.Size - 5;
 
 			if (i1 < TEXTSIZE[0])
 			{
 				i1 = TEXTSIZE[0];
 			}
 
-			TbText.Font = new Font(TbText.Font.FontFamily, i1);
+			TbResult.Font = new Font(TbResult.Font.FontFamily, i1);
 		}
 
-		private void CmsTextSelect_Open(MouseEventArgs e, TextBox Tb)
+		private void CmsResult_コピー_Click(object sender, EventArgs e)
 		{
-			if (Tb.SelectionLength > 0 && e.Button == MouseButtons.Left)
-			{
-				TB = Tb;
-				CmsTextSelect.Show(Cursor.Position);
-			}
+			Clipboard.Clear();
+			TbResult.Copy();
 		}
 
-		private void CmsTextSelect_コピー_Click(object sender, EventArgs e)
-		{
-			TB.Copy();
-		}
-
-		private void CmsTextSelect_ネット検索_Google_Click(object sender, EventArgs e)
+		private void CmsResult_ネット検索_Google_Click(object sender, EventArgs e)
 		{
 			SubNetSearch("https://www.google.co.jp/search?q=");
 		}
 
-		private void CmsTextSelect_ネット検索_YouTube_Click(object sender, EventArgs e)
+		private void CmsResult_ネット検索_YouTube_Click(object sender, EventArgs e)
 		{
 			SubNetSearch("https://www.youtube.com/results?search_query=");
 		}
 
-		private void CmsTextSelect_ネット検索_Wikipedia_Click(object sender, EventArgs e)
+		private void CmsResult_ネット検索_Wikipedia_Click(object sender, EventArgs e)
 		{
 			SubNetSearch("https://ja.wikipedia.org/wiki/");
 		}
 
 		private void SubNetSearch(string url)
 		{
-			_ = Process.Start(url + HttpUtility.UrlEncode(TB.SelectedText));
+			switch (ActiveControl)
+			{
+				case TextBox tb when tb.SelectionLength > 0:
+					_ = Process.Start(url + HttpUtility.UrlEncode(tb.SelectedText));
+					break;
+			}
 		}
 	}
 
