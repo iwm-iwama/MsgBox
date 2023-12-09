@@ -10,7 +10,8 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VER = "MessageBox iwm20230106";
+		private const string VERSION = "iwm_MsgBox_20230106";
+
 		private const string NL = "\r\n";
 
 		private static readonly string[] ARGS = Environment.GetCommandLineArgs();
@@ -151,7 +152,7 @@ namespace iwm_MsgBox
 			{
 				if (Text.Length == 0)
 				{
-					Text = VER;
+					Text = VERSION;
 				}
 
 				TbResult.Text =
