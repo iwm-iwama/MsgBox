@@ -10,7 +10,7 @@ namespace iwm_MsgBox
 {
 	public partial class Form1 : Form
 	{
-		private const string VERSION = "iwm_MsgBox_20230106";
+		private const string VERSION = "iwm_MsgBox_20240112";
 
 		private const string NL = "\r\n";
 
@@ -51,6 +51,8 @@ namespace iwm_MsgBox
 
 			int iW = Width;
 			int iH = Height;
+
+			bool bFormCenter = false;
 
 			// [0] は Program なので読み飛ばす
 			for (int _i1 = 1; _i1 < ARGS.Length; _i1++)
@@ -136,7 +138,7 @@ namespace iwm_MsgBox
 				}
 				else if (_s1 == @"-center")
 				{
-					Location = new Point((Screen.GetWorkingArea(this).Width - Width) / 2, (Screen.GetWorkingArea(this).Height - Height) / 2);
+					bFormCenter = true;
 				}
 			}
 
@@ -146,6 +148,11 @@ namespace iwm_MsgBox
 
 			Width = iW;
 			Height = iH;
+
+			if (bFormCenter)
+			{
+				Location = new Point((Screen.GetWorkingArea(this).Width - Width) / 2, (Screen.GetWorkingArea(this).Height - Height) / 2);
+			}
 
 			// help
 			if (TbResult.TextLength == 0)

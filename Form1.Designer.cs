@@ -243,7 +243,7 @@
 			this.Name = "Form1";
 			this.ShowIcon = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Form1";
 			this.TopMost = true;
 			this.Load += new System.EventHandler(this.Form1_Load);
